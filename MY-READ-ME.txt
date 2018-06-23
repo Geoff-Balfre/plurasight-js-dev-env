@@ -1,0 +1,99 @@
+
+INSIDE YOUR PROJECT WORKING DIRECTYORY:
+
+ $ git clone https://github.com/Geoff-Balfre/plurasight-js-dev-env.git
+
+	[ this creates a project folder with the same name as ]
+	[ your github repository "plurasight-js-dev-env"      ]
+
+SAVE PROJECT AS YOU GO:
+
+ $ git add .								[ stage all the files you changed ]
+
+ $ git commit -m "added new feature"		[ commit chnages locally ]
+
+ $ git push									[ push work to github ]
+
+GETTING STARTED:
+
+ 1. Setup & Github
+ 2. Editor
+ 3. Package Manager
+ 4. Dev Web Servers & share work
+ 5. Automation
+ 6. Transpiling
+ 7. Bundling
+ 8. Linting
+ 9. Testing
+ 10. ??
+ 11. Demo App
+ 12. Production Build
+ 13. Automated Deployment
+ 14. ??
+ 
+2. EDITOR:
+
+VSCode
+.editorconfig
+
+3. PACKAGE MANAGER:
+
+ $ node -v
+v8.10.0
+
+ $ npm -v
+6.0.0
+
+	[ create base package.json copy from https://gist.github.com/coryhouse/29bd1029b623beb4c7f79b748dcba844 ]
+
+ $ npm install
+
+	[ save package.json as original-package.json ]
+
+ $ npm audit									[ review and fix challenges from audit ]
+
+ $ npm install babel-node --save-dev		[ confirm update to package.json ]
+
+ $ npm install babel-preset-env --save-dev		[ remove old entry from package.json ]
+ $ npm install json-server@0.14.0				[ confirm update to package.json ]
+ $ npm install express@4.16.3					[ confirm update to package.json ]
+ $ npm install localtunnel@1.9.0
+ $ npm install nsp@3.2.1
+ $ npm install mocha@5.2.0						[ confirm update to package.json ]
+ $ npm install nock@9.3.3						[ confirm update to package.json ]
+ $ npm install compression@1.7.2				[ confirm update to package.json ]
+ $ npm install eslint-plugin-import@2.12.0		[ confirm update to package.json ]
+ $ npm install json-schema-faker@0.4.7			[ confirm update to package.json ]
+ $ npm update mime --depth 2
+
+==========================================================================================
+ $ npm audit									[ review and fix challenges from audit ]
+[!] 3 vulnerabilities found - Packages audited: 5854 (5853 dev, 310 optional)
+    Severity: 2 low | 1 critical
+## MORE TO DO/UNDERSTAND
+
+also wnat to use browsersync ??
+==========================================================================================
+
+4. DEV WEB SERVERS & SHARE WORKING:
+
+	Express
+
+	localtunnel			document use with browsersync
+
+	browsersync:		https://www.browsersync.io/
+									https://github.com/Browsersync/browser-sync
+									https://github.com/Browsersync/recipes
+
+5. AUTOMATION
+
+
+
+6. TRANSPILING
+
+7. BUNDLING
+
+8. LINTING
+
+
+

@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Raw Template</title>
+
+    <link rel="stylesheet" href="css/animate.min.css">
+    <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> --><!-- https://fontawesome.com/v4.7.0/ -->
+    <script src="https://use.fontawesome.com/d886b6ea7d.js"></script>
+
+    <style>
+
+    /*--------------------------------*/
+    /*  ##  BASIC HELPER CLASSES  ##  */
+    /*--------------------------------*/
+
+    /*--------------------------------*/
+    /*  ##  CSS GRID  ##              */
+    /*--------------------------------*/
+    /* css grid gallery https://gridbyexample.com/patterns/header-asmany-footer/ */
+  
+    .my-columns {
+        background-color: #E8E8E8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5em;
+    }
+
+    .one-column {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 1px;
+        background-color: black;
+    }
+
+    .two-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 1px;
+        grid-row-gap: 1px;
+        background-color: black;
+    }
+    .two-columns-staking {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 1px;
+        background-color: black;
+    }
+    div.two-columns-staking div.my-columns:nth-child(2) {
+        background-color: #DCDCDC;
+    }
+    @media screen and (max-width: 767.98px) {
+        .two-columns-staking {
+            grid-template-columns: 1fr;
+            grid-row-gap: 1px;
+        }
+    }
+    div.two-columns-reverse div.my-columns:nth-child(1) { grid-area: column-1; }
+    div.two-columns-reverse div.my-columns:nth-child(2) { grid-area: column-2; }
+        .two-columns-reverse {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 1px;
+            grid-row-gap: 1px;
+            grid-template-areas: "column-1 column-2";
+            vbackground-color: black;
+        }
+    div.two-columns-reverse div.my-columns:nth-child(2) {
+        background-color: #DCDCDC;
+    }
+
+
+
+    @media screen and (max-width: 767.98px) {
+        .two-columns-reverse {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "column-2 column-1";
+        }
+    }
+
+
+
+    .three-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 1px;
+        grid-row-gap: 1px;
+        background-color: black;
+    }
+
+    .four-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-column-gap: 1px;
+        grid-row-gap: 1px;
+        background-color: black;
+    }
+    .four-columns-staking {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-column-gap: 1px;
+        background-color: black;
+    }
+    div.four-columns-staking div.my-columns:nth-child(3),
+    div.four-columns-staking div.my-columns:nth-child(4) {
+        background-color: #D3D3D3;
+	}
+    @media screen and (max-width: 767.98px) {
+        .four-columns-staking {
+            grid-template-columns: 1fr 1fr;
+            grid-row-gap: 1px;
+        }
+    }
+
+    /*--------------------------------*/
+    /*  ##  CSS GRID  ##              */
+    /*--------------------------------*/
+
+
+    /*--------------------------------*/
+    /*  ## COLOR PALETTE  e##     */
+    /*---------------------------*/
+
+    .palette {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 5rem);
+        grid-gap: 1rem;
+        padding: 1rem;
+    }
+        .swatch {
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            border-radius: 0.25rem;
+            height: 5rem;
+        }
+        .swatch-text {
+            display: block;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        .swatch-primary {
+            color: $light;
+            background-color: blue;
+        }
+        .swatch-secondary {
+            color: $light;
+            background-color: #909090;
+        }
+        .swatch-default {
+            color: $dark;
+            background-color: #d8d8d8;
+        }
+        .swatch-success {
+            color: $light;
+            background-color: green;
+        }
+        .swatch-warning {
+            color: $light;
+            background-color: orange;
+        }
+        .swatch-danger {
+            color: $light;
+            background-color: red;
+        }
+        .swatch-info {
+            color: $dark;
+            background-color: cyan;
+        }
+
+    /*---------------------------*/
+    /*---------------------------*/
+
+      body {
+        background-color: #E8F8F5;
+      }
+      .screensize {
+        font-size: 85%;
+        float: right;
+      }
+      .color-red {
+        color: red;
+      }
+
+      .content {
+
+      }
+
+      .section-heading {
+        margin-top: 1em;
+        text-transform: uppercase;
+      }
+      .section-sub-heading {
+        font-size: 85%;
+        font-style: italic;
+        text-transform: uppercase;
+      }
+      .section-content {
+        margin-bottom: 0.25em;
+      }
+
+      .atom-wrapper,
+      .form-wrapper {
+        background-color: #FFF;
+        border: thin dotted #CCC; 
+      }
+
+      .atom-center-content {
+        margin: 0 auto;
+      }
+      .atom-text-content {
+        text-align: centre;
+      }
+
+
+.icon-padding {
+        padding-top: 0.5em;
+}
+
+
+      h1, h2, h3, h4, h5, h6, p, ol, ul, dl {
+        margin-top: 0;
+      }
+      .favicons {
+        background-color: #E8F8F5;
+        border: thin solid #ccc;
+	  }
+      .reduced2 {
+        border: thin solid red;
+        height: 128px;
+        width: 128px;
+	  }
+      .reduced4 {
+        border: thin solid red;
+        height: 128px;
+        width: 128px;
+	  }
+
+      .face-default {
+        transform: rotate(0deg);
+      }
+      .face-right {
+        transform: rotate(90deg);
+      }
+      .face-down {
+        transform: rotate(180deg);
+      }
+      .face-left {
+        transform: rotate(-90deg);
+      }
+
+
+
+
+      .spin {
+        -webkit-animation: clockwise-spin 2s linear infinite;
+                animation: clockwise-spin 2s linear infinite;
+      }
+
+      .spin-anti {
+        -webkit-animation: anti-clockwise-spin 2s linear infinite;
+                animation: anti-clockwise-spin 2s linear infinite;
+      }
+
+      .pulse {
+        -webkit-animation: clockwise-spin 2s steps(8) infinite;
+                animation: clockwise-spin 2s steps(8) infinite;
+      }
+
+      .color-hue {
+ 	    -webkit-animation: color-hue 10s linear infinite;
+                animation: color-hue 10s linear infinite;
+      }
+	  
+      @-webkit-keyframes clockwise-spin {
+        0%   { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+      }
+      @keyframes clockwise-spin {
+        0%   { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      @-webkit-keyframes anti-clockwise-spin {
+        0%   { -webkit-transform: rotate(360deg); }
+        100% { -webkit-transform: rotate(0deg); }
+      }
+      @keyframes anti-clockwise-spin {
+        0%   { transform: rotate(360deg); }
+        100% { transform: rotate(0deg); }
+      }
+
+      @-webkit-keyframes color-hue {
+        from { -webkit-filter: hue-rotate(0deg); }
+        to   { -webkit-filter: hue-rotate(-360deg); }	  
+      }
+      @keyframes color-hue {
+        from { -webkit-filter: hue-rotate(0deg); }
+        to   { -webkit-filter: hue-rotate(-360deg); }	  
+      }
+  
+
+    </style>
+
+  </head>
+  <body style>
+
+    <div>
+      <div class="menu">
+
+
+      </div> 
+      <div class="section">
+
+          <h4 class="section-heading">Margin and Padding <span class="screensize"></span></h4>
+          <div class="section-content">
+            <div class="atom-wrapper" style="background-color: transparent;">
+
+              <img class="" src="img/spacing.png" alt="SEO: Promotional Keyword Rich ALT text">
+
+            </div>
+          </div>
+
+          <hr>
+          <h4 class="section-heading">Grid, Rows, Columns <span class="screensize"></span></h4>
+          <div class="section-content">
+            <div class="atom-wrapper">
+
+
+
+			https://www.youtube.com/watch?v=moBhzSC455o&t=60s
+
+			https://cssgrid.io/
+
+
+
+            </div>
+          </div>
+          <hr>
+
+
+          <h4 class="section-heading">Color Palette <span class="screensize"></span></h4>
+          <div class="section-content">
+            <div class="atom-wrapper content-center">
+                <div class="palette">
+                  <div class="swatch swatch-primary">
+                    <span class="swatch-text">Primary</span>
+                  </div>
+                  <div class="swatch swatch-secondary">
+                    <span class="swatch-text">Secondary</span>
+                  </div>
+                  <div class="swatch swatch-default">
+                    <span class="swatch-text">Default</span>
+                  </div>
+                  <div class="swatch swatch-success">
+                    <span class="swatch-text">Success</span>
+                  </div>
+                  <div class="swatch swatch-warning">
+                    <span class="swatch-text">Warning</span>
+                  </div>
+                  <div class="swatch swatch-danger">
+                    <span class="swatch-text">Danger</span>
+                  </div>
+                  <div class="swatch swatch-info">
+                    <span class="swatch-text">Info</span>
+                  </div>
+                </div><!--/.palette-->
+            </div>
+          </div>
+
+          <!-- https://css-tricks.com/snippets/css/system-font-stack/ -->
+          <h4 class="section-heading">Font Stack <span class="screensize"></span></h4>
+          <table>
+            <tr><th>Font</th><th>OS</th></tr>
+            <tr><td>"system-ui"</td><td>Chrome, Safari recent ship generic font replacing following two</td></tr>
+            <tr><td>-apple-system</td><td>Safari for OS X and iOS (San Francisco)</td></tr>
+            <tr><td>BlinkMacSystemFont</td><td>Chrome < 56 for OS X (San Francisco)</td></tr>
+            <tr><td>"Segoe UI", Tahoma</td><td>Windows, XP</td></tr>
+            <tr><td>Roboto, "Droid Sans"</td><td>Andriod</td></tr>
+            <tr><td>"Helvetica Neue", Helvetica, Arial, sans-serif&nbsp;</td><td>Basic web fallback</td></tr>
+            <tr><td>Ubuntu, Cantarell, "Fira Sans"</td><td>Ubuntu, Gnome, Firefox OS</td></tr>
+            <tr><td>"Apple Color Emoji"</td><td>Emoji fonts</td></tr>
+            <tr><td>"Segoe UI Emoji"</td><td>Emoji fonts</td></tr>
+            <tr><td>"Segoe UI Symbol"</td><td>Emoji fonts</td></tr>
+          </table>
+
+          <h4 class="section-heading">Headings <span class="screensize"></span></h4>
+
+          <div class="section-content">
+            <div class="atom-wrapper">
+                  <h1>H1 heading style</h1>
+            </div>
+          </div>
+
+          <div class="section-content">
+            <div class="atom-wrapper">
+                <h2>H2 heading style</h2>
+            </div>
+          </div>
+
+          <div class="section-content">
+            <div class="atom-wrapper">
+              <h3>H3 heading style</h3>
+            </div>
+          </div>
+
+          <div class="section-content">
+            <div class="atom-wrapper">
+              <h4>H4 heading style</h4>
+            </div>
+          </div>
+
+          <div class="section-content">
+            <div class="atom-wrapper">
+                <h5>H5 heading style</h5>
+            </div>
+          </div>
+
+          <div class="section-content">
+            <div class="atom-wrapper">
+                <h6>H6 heading style</h6>
+            </div>
+          </div>
+
+          <h4 class="section-heading">Typography <span class="screensize"></span></h4>
+
+          <div class="section-content">
+            <div class="atom-wrapper">
+
+              <p><strong>Bold Standard Paragraph text</strong></p>
+              <p>Today weather conditions will be mainly dry, very warm and often sunny. Isolated showers may break out during the afternoon in the east. Winds will be light and mainly offshore, but where onshore breezes develop it will feel cooler. Maximum temperature 26&#8451;.</p>
+              <p>Tonight begins with some pleasant early evening sunshine is expected, then dry through the night with light variable winds. Feeling cooler near coasts. Minimum temperature 10&#8451;.</p>
+              <p>Through Saturday morning there will be some sunny spells, but also the risk of a few showers. It will then cloud over with spells of rain pushing up from the south.</p>
+              <p>There will be some sunny spells on Sunday, but there will be a chance of showers too. Some of the showers may be heavy. Sunday night should be dry though. Monday looks to be a largely dry day with some sunny spells, and Tuesday should also be mainly dry, although showers are likely later on.</p>
+
+              <p><strong>Standard Character Set</strong></p>
+              <p class="">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789<br>¬!"£$€%^&*()_+-=|{}:@~<>?\[];\'#,./<br></p>
+
+              <p><strong>Blockquote</strong></p>
+              <blockquote class="blockquote">
+                  <p>"Once you eliminate the impossible, whatever remains, no matter how improbable, must be the truth."</p>
+                  <p>&nbsp;&nbsp;&nbsp;&nbsp;Sherlock Holmes (Sir Arthur Conan Doyle, 1859-1930)</p>
+              </blockquote>
+
+            </div>
+          </div>
+  
+          <h4 class="section-heading">Lists <span class="screensize"></span></h4>
+
+          <div class="section-content">
+            <div class="atom-wrapper">
+              <p><strong>Unstyled List</strong></p>
+              <ol class="" style="padding-left: 0; list-style: none;">
+                <li>List Item </li>
+                <li>List Item </li>
+                <li>List Item </li>
+              </ol>
+              <p><strong>Unordered</strong></p>
+              <ul class="">
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+                <li>List Item 3</li>
+              </ul>
+              <p><strong>Ordered</strong></p>
+              <ol class="">
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+              </ol>
+              <p><strong>Definition</strong></p>
+              <dl class="">
+                <dt>Coffee</dt>
+                  <dd>Black hot drink</dd>
+                <dt>Milk</dt>
+                  <dd>White cold drink</dd>
+                <dt>Hot Chocolate</dt>
+                  <dd>Nice hot drink</dd>
+              </dl>
+            </div>
+          </div>
+
+          <h4 class="section-heading">Buttons <span class="screensize"></span></h4>
+
+          <div class="section-content">
+            <div class="atom-wrapper">
+              <button type="button" class="btn btn-primary">Primary Call To Action</button>&nbsp;&nbsp;&nbsp;&nbsp;
+              <button type="button" class="btn btn-primary" disabled>Disabled Primary</button><br><br>
+
+              <button type="button" class="btn btn-secondary">Secondary</button>&nbsp;&nbsp;&nbsp;&nbsp;
+              <button type="button" class="btn btn-secondary" disabled>Disabled Secondary</button><br><br>
+
+              <button type="button" class="btn btn-default">Default</button>&nbsp;&nbsp;&nbsp;&nbsp;
+              <button type="button" class="btn btn-default" disabled>Disabled Default</button><br><br>
+              <p>
+                <strong>Optional Button Styles:</strong><br>Success<br>Warning<br>Danger<br>Info<br>
+              </p>
+            </div>
+          </div>
+
+          <h4 class="section-heading">Images <span class="screensize"></span></h4>
+
+          <h4 class="section-heading"><span class="section-sub-heading">Favicons</span></h4>
+          <p>&nbsp;&nbsp;<small>Client Specific Favicons defined in project</small></p>
+
+          <div class="section-content">
+            <div class="atom-wrapper">
+              <p>&nbsp;&nbsp;
+                <img class="favicons reduced4" src="assets/favicon-social/favicon_package_v0.16/android-chrome-512x512.png" alt="">&nbsp;&nbsp;
+                <img class="favicons reduced2" src="assets/favicon-social/favicon_package_v0.16/android-chrome-192x192.png" alt="">&nbsp;&nbsp;
+                <img class="favicons reduced2" src="assets/favicon-social/favicon_package_v0.16/mstile-150x150.png" alt="">&nbsp;&nbsp;
+                <img class="favicons reduced2" src="img/apple-touch-icon.png" alt="">&nbsp;&nbsp;
+                <img class="favicons" src="img/favicon-32x32.png" alt="">&nbsp;&nbsp;
+                <img class="favicons" src="img/favicon-16x16.png" alt="">&nbsp;&nbsp;
+                <img class="favicons" src="img/favicon.ico" alt="">&nbsp;&nbsp;
+                <img class="favicons reduced2" src="assets/favicon-social/favicon_package_v0.16/og-image.jpg" alt="">&nbsp;&nbsp;
+              </p>
+            </div>
+
+            <h4 class="section-heading"><span class="section-sub-heading">Icons (SVG)</span></h4>
+
+            <div class="atom-wrapper">
+              <h4 class="section-heading"><span class="section-sub-heading">Brands</span></h4>
+              <p>&nbsp;&nbsp;
+                <small>Client Specific Icons defined in project</small>
+              </p>
+
+              <h4 class="section-heading"><span class="section-sub-heading">Navigation</span></h4>
+              <p class="icon-padding">&nbsp;&nbsp;
+                <i class="fa fa-bars fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-ellipsis-v fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fa fa-ellipsis-v fa-lg fa-rotate-270" aria-hidden="true"></i>&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fa fa-home fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-chevron-right fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-chevron-down fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-chevron-left fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+              </p>
+
+              <h4 class="section-heading"><span class="section-sub-heading">Devices</span></h4>
+              <p class="icon-padding">&nbsp;&nbsp;
+                <i class="fa fa-mobile fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-mobile fa-lg fa-rotate-270" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-tablet fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-tablet fa-lg fa-rotate-270" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-laptop fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-desktop fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-television fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+              </p>
+
+              <h4 class="section-heading"><span class="section-sub-heading">OS</span></h4>
+              <p class="icon-padding">&nbsp;&nbsp;
+                <i class="fa fa-android fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-apple fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-linux fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-windows fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+              </p>
+
+              <h4 class="section-heading"><span class="section-sub-heading">Misc.</span></h4>
+              <p>&nbsp;&nbsp;
+                <i class="fa fa-plus fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-minus fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-check fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-close fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-search fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-book fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-columns fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-cubes fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+              </p>
+
+              <p>&nbsp;&nbsp;
+                <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-globe fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-heart-o fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-image fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-lock fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-phone fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-sitemap fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+              </p>
+
+              <p>&nbsp;&nbsp;
+                <i class="fa fa-share-alt fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-shopping-basket fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-star-o fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-table fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-th fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-unlock-all fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-user-o fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+              </p>
+
+              <p>&nbsp;&nbsp;
+                <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-spinner fa-pulse" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>&nbsp;&nbsp;
+              </p>
+
+
+
+
+
+
+
+
+ 
+              <h4 class="section-heading"><span class="section-sub-heading">Social Brands</span></h4>
+              <p>&nbsp;&nbsp;
+                <i class="fa fa-facebook fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-google-plus fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-instagram fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-twitter fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-youtube fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+                <i class="fa fa-file-pdf-o fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;
+              </p>
+
+<!--
+              <h4 class="section-heading"><span class="section-sub-heading">Brands</span></h4>
+              <p>&nbsp;&nbsp;
+                <svg class="icon icon-brand" aria-hidden="true"><use xlink:href="symbol-defs.svg#icon-brand"></use></svg>&nbsp;&nbsp;
+                <svg class="icon icon-brand2" aria-hidden="true"><use xlink:href="symbol-defs.svg#icon-brand2"></use></svg>&nbsp;&nbsp;
+                <svg class="icon icon-brand3" aria-hidden="true"><use xlink:href="symbol-defs.svg#icon-brand3"></use></svg>&nbsp;&nbsp;
+                <svg class="icon icon-brand4" aria-hidden="true"><use xlink:href="symbol-defs.svg#icon-brand4"></use></svg>&nbsp;&nbsp;
+                <svg class="icon icon-brand5" aria-hidden="true"><use xlink:href="symbol-defs.svg#icon-brand5"></use></svg>&nbsp;&nbsp;
+                <svg class="icon icon-brand6" aria-hidden="true"><use xlink:href="symbol-defs.svg#icon-brand6"></use></svg>&nbsp;&nbsp;
+                <svg class="icon icon-brand7" aria-hidden="true"><use xlink:href="symbol-defs.svg#icon-brand7"></use></svg>&nbsp;&nbsp;
+                <svg class="icon icon-file-pdf-o" aria-hidden="true"><use xlink:href="symbol-defs.svg#icon-file-pdf-o"></use></svg>&nbsp;&nbsp;
+              </p>
+-->
+
+            </div>
+
+            <h4 class="section-heading"><span class="section-sub-heading">holder.js</span></h4>
+            <div class="atom-wrapper" style="text-align: center;">
+                  <img src="holder.js/75x75?textmode=exact"   alt="SEO: Promotional Keyword Rich ALT text">&nbsp;
+                  <img src="holder.js/100x100?textmode=exact" alt="SEO: Promotional Keyword Rich ALT text">&nbsp;
+                  <img src="holder.js/200x200?textmode=exact" alt="SEO: Promotional Keyword Rich ALT text">
+            </div>
+
+            <h4 class="section-heading"><span class="section-sub-heading">SVG</span></h4>
+            <div class="atom-wrapper" style="text-align: center;">
+                  <img src="img/tiger.svg" height="50px"  width="50px"  alt="SEO: Promotional Keyword Rich ALT text">&nbsp;
+                  <img src="img/tiger.svg" height="100px" width="100px" alt="SEO: Promotional Keyword Rich ALT text">&nbsp;
+                  <img src="img/tiger.svg" height="200px" width="200px" alt="SEO: Promotional Keyword Rich ALT text">
+            </div>
+
+            <h4 class="section-heading"><span class="section-sub-heading">JPG</span></h4>
+            <div class="atom-wrapper" style="text-align: center;">
+                <img src="img/landscape.jpg" height="50px"  width="50px"  alt="SEO: Promotional Keyword Rich ALT text">&nbsp;
+                <img src="img/landscape.jpg" height="100px" width="100px" alt="SEO: Promotional Keyword Rich ALT text">&nbsp;
+                <img src="img/landscape.jpg" height="200px" width="200px" alt="SEO: Promotional Keyword Rich ALT text">
+            </div>
+
+          </div>
+
+          <h4 class="section-heading">Forms <span class="screensize"></span></h4>
+
+          <div class="section-content">
+            <div class="">          
+              <form id="formId" class="form-wrapper" >
+                <fieldset class="">
+                  <legend class="col-form-legend">LEGEND</legend>
+
+                    <div class="form-group">
+                      <label for="exampleInput">Base Input</label>
+                      <input type="email" class="form-control" id="exampleInput" placeholder="Default Input">
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                      <label for="exampleDisabled">Disabled Input</label>
+                      <input type="email" class="form-control" id="exampleDisabled" placeholder="Default Input" disabled>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                      <label for="exampleTextarea">Text Area</label>
+                      <textarea class="form-control" id="exampleTextarea" rows="3"  placeholder="Text Area Input"></textarea>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                      <label for="exampleSelect">Example select</label>
+                      <select class="form-control" id="exampleSelect">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                      </select>
+                    </div>
+                    <br>
+
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck">
+                      <label class="form-check-label" for="exampleCheck">Check me out</label>
+                    </div>
+                    <br>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                      <label class="form-check-label" for="defaultCheck1">
+                        Default checkbox
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                      <label class="form-check-label" for="defaultCheck2">
+                        Another checkbox
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck3" disabled>
+                      <label class="form-check-label" for="defaultCheck3">
+                        Disabled checkbox
+                      </label>
+                    </div>
+                    <br>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                      <label class="form-check-label" for="exampleRadios1">
+                        Default radio
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                      <label class="form-check-label" for="exampleRadios2">
+                        Another radio
+                      </label>
+                    </div>
+                    <div class="form-check disabled">
+                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+                      <label class="form-check-label" for="exampleRadios3">
+                        Disabled radio
+                      </label>
+                    </div>
+                    <br>
+
+                  <button type="submit" class="btn btn-primary">Submit</button>
+
+                </fieldset>
+              </form><!--/form-->
+            </div>
+          </div>
+
+          <h4 class="section-heading">Tables <span class="screensize"></span></h4>
+
+          <h4 class="section-heading">Tabs <span class="screensize"></span></h4>
+
+          <h4 class="section-heading">Modal <span class="screensize"></span></h4>
+
+          <h4 class="section-heading">Overlay <span class="screensize"></span></h4>
+
+          <h4 class="section-heading">Accordian <span class="screensize"></span></h4>
+
+          <hr>
+          <hr>
+
+          <h4 class="section-heading">Components</h4>
+          <p>
+            TO DO IN SEPERATE PAGES: &nbsp;&nbsp;
+            Tooltips &nbsp;&nbsp;
+            Native Form Elements &nbsp;&nbsp;
+            Cards &nbsp;&nbsp;
+            Media &nbsp;&nbsp;
+            Baskets &nbsp;&nbsp;
+          </p>
+
+          <hr>
+          <hr>
+
+      </div> 
+    </div>
+
+    <script src="js/holder.min.js"></script>
+    <script>
+
+        window.onresize = doSomethingCool;
+ 
+        function doSomethingCool() {
+          var index ;
+          var list = document.getElementsByClassName('screensize');
+          var length = list.length;
+          var size = window.innerWidth + '<small>x</small>' + window.innerHeight;
+          for (index = 0; index < length; index++) {
+            list[index].innerHTML = size;
+          }
+        }
+
+        window.dispatchEvent(new Event('resize'));
+
+    </script>
+  </body>
+</html>
