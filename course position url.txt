@@ -1,7 +1,0 @@
-
-https://app.pluralsight.com/player?course=javascript-development-environment&author=cory-house&name=javascript-development-environment-m6&clip=5&mode=live
-
-https://app.pluralsight.com/player?course=javascript-development-environment&author=cory-house&name=javascript-development-environment-m7&clip=2&mode=live
-
-
-
